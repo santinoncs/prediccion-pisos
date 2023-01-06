@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Formulario de predicción de precios de pisos</title>
+    <link rel="stylesheet" type="text/css" href="main2.css">
+    <script src="main.js"></script>
+  </head>
+  <body>
+
+      
+    <h1>Formulario de predicción de precios de pisos</h1>
+    <p>Por favor, introduce los siguientes datos para obtener una predicción del precio de tu piso:</p>
+
+    <form action="/submit-form" method="POST">
+      <label for="square-meters">Metros cuadrados:</label>
+      <input type="text" id="square-meters" name="square-meters"><br>
+
+      <label for="bedrooms">Habitaciones:</label>
+      <input type="text" id="bedrooms" name="bedrooms"><br>
+
+      <label for="bathrooms">Lavabos:</label>
+      <input type="text" id="bathrooms" name="bathrooms"><br>
+
+      <label for="neighborhood">Barrio:</label>
+      <select id="neighborhood" name="neighborhood">
+        <option value="gracia">Gracia</option>
+        <option value="eixample">Eixample</option>
+      </select><br><br>
+
+      <label for="elevator">¿Hay ascensor?</label>
+      <input type="checkbox" id="elevator" name="elevator" value="yes"><br>
+
+      <label for="parking">¿Hay parking?</label>
+      <input type="checkbox" id="parking" name="parking" value="yes"><br>
+
+      <label for="air-conditioning">¿Hay aire acondicionado?</label>
+      <input type="checkbox" id="air-conditioning" name="air-conditioning" value="yes"><br>
+
+      <label for="new-construction">¿Es nueva construcción?</label>
+      <input type="checkbox" id="new-construction" name="new-construction" value="yes"><br>
+
+      <label for="terrace">¿Hay terraza?</label>
+      <input type="checkbox" id="terrace" name="terrace" value="yes"><br>
+
+      <label for="pool">¿Hay piscina?</label>
+      <input type="checkbox" id="pool" name="pool" value="yes"><br>
+
+      <label for="public-transport">¿Hay transporte público cerca?</label>
+      <input type="checkbox" id="public-transport" name="public-transport" value="yes"><br>
+
+      <label for="garden">¿Hay jardín?</label>
+      <input type="checkbox" id="garden" name="garden" value="yes"><br>
+
+      <input type="submit" value="Enviar">
+    </form>
+  </body>
+</html>

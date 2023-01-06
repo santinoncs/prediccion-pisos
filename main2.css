@@ -1,0 +1,55 @@
+/* Establece una imagen como fondo y ajusta el tamaño y la posición */
+body {
+    background-image: url('img/fondo1.jpg');
+    background-size: cover;
+    background-position: center;
+    /* Añade un efecto de transparencia a la imagen */
+    background-blend-mode: screen;
+    opacity: 0.8;
+  }
+  
+  /* Establece un color de fondo claro para el formulario */
+  form {
+    background-color: #f8f8f8;
+    /* Añade un borde y una sombra al formulario */
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    /* Ajusta el ancho y el margen del formulario */
+    width: 500px;
+    margin: 20px auto;
+    /* Añade un padding para separar el contenido del formulario de los bordes */
+    padding: 20px;
+  }
+  
+  /* Ajusta el tamaño y la fuente del título */
+  h1 {
+    font-size: 32px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif, sans-serif;
+  }
+  
+  /* Ajusta el tamaño y la fuente de los campos del formulario */
+  label, input {
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+  }
+  
+  /* Ajusta el color y el tamaño de la fuente de los botones */
+  button {
+    color: white;
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+  }
+  
+  /* Establece un color de fondo y un borde redondeado para los botones */
+  button {
+    background-color: #4caf50;
+    border-radius: 4px;
+  }
+  
+  /* Ajusta el ancho y el margen de los campos del formulario */
+  label, input {
+    width: 100%;
+    margin: 8px 0;
+  }
+  
+  
