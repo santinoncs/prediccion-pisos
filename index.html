@@ -1,56 +1,129 @@
 <html>
   <head>
     <title>Formulario de predicción de precios de pisos</title>
-    <link rel="stylesheet" type="text/css" href="main2.css">
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
   </head>
   <body>
 
       
     <h1>Formulario de predicción de precios de pisos</h1>
-    <p>Por favor, introduce los siguientes datos para obtener una predicción del precio de tu piso:</p>
 
-    <form action="/submit-form" method="POST">
-      <label for="square-meters">Metros cuadrados:</label>
-      <input type="text" id="square-meters" name="square-meters"><br>
+    
+      <form id="formulario" onsubmit="sendPostRequest(); return false;">
+      <label for="Sqft_m2">Metros cuadrados2:</label>
+      <input type="number" id="Sqft_m2" name="Sqft_m2" min="5" max="100000" step=0.1>
 
-      <label for="bedrooms">Habitaciones:</label>
-      <input type="text" id="bedrooms" name="bedrooms"><br>
+      <label for="Rooms">Habitaciones:</label>
+      <input type="text" id="Rooms" name="Rooms"><br>
 
-      <label for="bathrooms">Lavabos:</label>
-      <input type="text" id="bathrooms" name="bathrooms"><br>
+      <label for="Toilets">Lavabos:</label>
+      <input type="text" id="Toilets" name="Toilets"><br>
 
-      <label for="neighborhood">Barrio:</label>
-      <select id="neighborhood" name="neighborhood">
-        <option value="gracia">Gracia</option>
-        <option value="eixample">Eixample</option>
-      </select><br><br>
+      <label for="RatioEurM">RatioEurM:</label>
+      <input type="number" id="RatioEurM" name="RatioEurM" min="5" max="100000" step=0.1><br>
 
-      <label for="elevator">¿Hay ascensor?</label>
-      <input type="checkbox" id="elevator" name="elevator" value="yes"><br>
 
-      <label for="parking">¿Hay parking?</label>
-      <input type="checkbox" id="parking" name="parking" value="yes"><br>
+      <label for="Elevator">¿Hay ascensor?</label>
+      <input type="radio" class="radio-button inline-checkbox" id="ElevatorYes" name="Elevator" value="Yes">Yes
+      <input type="radio" class="radio-button" id="ElevatorNo" name="Elevator" value="No">No<br>
 
-      <label for="air-conditioning">¿Hay aire acondicionado?</label>
-      <input type="checkbox" id="air-conditioning" name="air-conditioning" value="yes"><br>
 
-      <label for="new-construction">¿Es nueva construcción?</label>
-      <input type="checkbox" id="new-construction" name="new-construction" value="yes"><br>
+      <label for="Parking">¿Hay Parking?</label>
+      <input type="radio" class="radio-button" id="ParkingYes" name="Parking" value="Yes">Yes
+      <input type="radio" class="radio-button" id="ParkingNo" name="Parking" value="No">No<br>
 
-      <label for="terrace">¿Hay terraza?</label>
-      <input type="checkbox" id="terrace" name="terrace" value="yes"><br>
+      <label for="CoolAir">¿Hay Cool Air?</label>
+      <input type="radio" class="radio-button" id="CoolAirYes" name="CoolAir" value="Yes">Yes
+      <input type="radio" class="radio-button" id="CoolAirNo" name="CoolAir" value="No">No<br>
 
-      <label for="pool">¿Hay piscina?</label>
-      <input type="checkbox" id="pool" name="pool" value="yes"><br>
+      <label for="CoolAir">¿Hay Cool Air?</label>
+      <div class="radio-button">
+        <input type="radio" id="yes" name="CoolAir" value="Yes">
+        <label for="yes">Yes</label>
+      </div>
+      <div class="radio-button">
+        <input type="radio" id="no" name="CoolAir" value="No">
+        <label for="no">No</label>
+      </div>
 
-      <label for="public-transport">¿Hay transporte público cerca?</label>
-      <input type="checkbox" id="public-transport" name="public-transport" value="yes"><br>
+      
 
-      <label for="garden">¿Hay jardín?</label>
-      <input type="checkbox" id="garden" name="garden" value="yes"><br>
 
-      <input type="submit" value="Enviar">
+      <label for="Heating">¿Hay Heating?</label>
+      <input type="radio" id="HeatingYes" name="Heating" value="Yes">Yes
+      <input type="radio" id="HeatingNo" name="Heating" value="No">No<br>
+
+      <label for="Construction">¿Nueva Construccion?</label>
+      <input type="radio" id="ConstructionYes" name="Construction" value="Not New">Yes
+      <input type="radio" id="ConstructionNo" name="Construction" value="New">No<br>
+
+      <label for="Balcony">¿Tiene balcon?</label>
+      <input type="radio" id="BalconyYes" name="Balcony" value="Yes">Yes
+      <input type="radio" id="BalconyNo" name="Balcony" value="No">No<br>
+
+
+      
+      <div id="prediction-container">
+        <h2 id="prediction-header">Prediction:</h2>
+        <p id="prediction-value">Loading...</p>
+      </div>
+      
+
+
+      <button type="submit">Enviar</button>
     </form>
+
+    <script>
+function sendPostRequest() {
+  const formData = new FormData(document.getElementById('formulario'));
+
+  var input = document.getElementById("Sqft_m2").value;
+  var floatValue = parseFloat(input.replace(',', '.'));
+
+  // Convierte los datos del formulario a un objeto JSON
+  const data = {};
+  formData.forEach((value, key) => {
+    // Si el campo es una casilla de verificación y no está seleccionada, enviar "No"
+
+      // Si el campo es Rooms o Toilets, convertir a entero
+      // Si el campo es Sqft_m2 o RatioEurM, convertir a float
+      if (key === "Rooms" || key === "Toilets") {
+        data[key] = parseInt(value);
+      } else if (key === "Sqft_m2" || key === "RatioEurM") {
+        data[key] = parseFloat(value);
+      } else {
+        data[key] = value;
+      }
+  });
+
+  // Convierte los datos del formulario a un objeto JSON
+
+  // Envía la solicitud HTTP POST a tu aplicación Flask
+  fetch('http://127.0.0.1:5000/predict', {
+    method: 'POST',
+    //mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json()) // Procesa la respuesta del servidor como JSON
+  .then(data => {
+    // Aquí puedes procesar los datos devueltos por el servidor
+    console.log(data);
+    document.getElementById("prediction-value").innerHTML = data.Price;
+
+  })
+  .catch(error => {
+    // Aquí puedes manejar cualquier error que ocurra durante la solicitud
+    console.error(error);
+  });
+}
+
+  </script>
+    
+
+
   </body>
 </html>

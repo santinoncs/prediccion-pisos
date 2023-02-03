@@ -1,63 +1,207 @@
-<!-- Menú de navegación -->
-<nav>
-    <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Acerca de</a></li>
-      <li><a href="#">Productos</a></li>
-      <li><a href="#">Contacto</a></li>
-    </ul>
-  </nav>
-  
-  <!-- Slider de imágenes -->
-  <div id="slider">
-    <div class="slide">
-      <img src="img/piso1.jpg">
-      <p>Texto descriptivo de la primera imagen</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prediccion Precios Pisos Form</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+      integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="main2.css" />
+  </head>
+  <body>
+    <div class="testbox">
+      <form id="formulario" onsubmit="sendPostRequest(); return false;">
+        <div class="banner">
+          <h1>Formulario de predicción de precios de pisos</h1>
+        </div>
+        <div class="colums">
+          <div class="item">
+            <p>Metros Cuadrados</p>
+            <div class="name-item">
+              <input
+                type="text"
+                name="Sqft_m2"
+                id="Sqft_m2"
+                placeholder="100.5"
+              />
+            </div>
+          </div>
+          <div class="item">
+            <p>Habitaciones</p>
+            <div class="name-item">
+              <input type="text" id="Rooms" name="Rooms" />
+            </div>
+          </div>
+          <div class="item">
+            <p>Lavabos</p>
+            <div class="name-item">
+              <input type="text" id="Toilets" name="Toilets" />
+            </div>
+          </div>
+          <div class="item">
+            <p>Ratio Euros / Metros Cuadrados</p>
+            <div class="name-item">
+              <input type="text" name="RatioEurM" />
+            </div>
+          </div>
+        </div>
+        <div class="colums">
+          <div class="question">
+            <p>Ascensor</p>
+            <div class="question-answer">
+              <input
+                type="radio"
+                value="Yes"
+                id="ElevatorYes"
+                name="Elevator"
+              />
+              <label for="ElevatorYes" class="radio"><span>Yes</span></label>
+              <input type="radio" value="No" id="ElevatorNo" name="Elevator" />
+              <label for="ElevatorNo" class="radio"><span>No</span></label>
+            </div>
+          </div>
+          <div class="question">
+            <p>Parking</p>
+            <div class="question-answer">
+              <input type="radio" value="Yes" id="ParkingYes" name="Parking" />
+              <label for="ParkingYes" class="radio"><span>Yes</span></label>
+              <input type="radio" value="none" id="ParkingNo" name="Parking" />
+              <label for="ParkingNo" class="radio"><span>No</span></label>
+            </div>
+          </div>
+          <div class="question">
+            <p>Aire Acondicionado</p>
+            <div class="question-answer">
+              <input type="radio" value="Yes" id="CoolAirYes" name="CoolAir" />
+              <label for="CoolAirYes" class="radio"><span>Yes</span></label>
+              <input type="radio" value="No" id="CoolAirNo" name="CoolAir" />
+              <label for="CoolAirNo" class="radio"><span>No</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <p>Calefacción</p>
+            <div class="question-answer">
+              <input type="radio" value="Yes" id="HeatingYes" name="Heating" />
+              <label for="HeatingYes" class="radio"><span>Yes</span></label>
+              <input type="radio" value="No" id="HeatingNo" name="Heating" />
+              <label for="HeatingNo" class="radio"><span>No</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="colums">
+          <div class="question">
+            <p>Nueva Construcccion</p>
+            <div class="question-answer">
+              <input
+                type="radio"
+                value="New"
+                id="ConstructionYes"
+                name="Construction"
+              />
+              <label for="ConstructionYes" class="radio"
+                ><span>Yes</span></label
+              >
+              <input
+                type="radio"
+                value="Not New"
+                id="ConstructionNo"
+                name="Construction"
+              />
+              <label for="ConstructionNo" class="radio"><span>No</span></label>
+            </div>
+          </div>
+          <div class="question">
+            <p>Piscina</p>
+            <div class="question-answer">
+              <input type="radio" value="Yes" id="PoolYes" name="Pool" />
+              <label for="PoolYes" class="radio"><span>Yes</span></label>
+              <input type="radio" value="No" id="PoolNo" name="Pool" />
+              <label for="PoolNo" class="radio"><span>No</span></label>
+            </div>
+          </div>
+          <div class="question">
+            <p>Jardin</p>
+            <div class="question-answer">
+              <input type="radio" value="Yes" id="YardYes" name="Yard" />
+              <label for="YardYes" class="radio"><span>Yes</span></label>
+              <input type="radio" value="No" id="YardNo" name="Yard" />
+              <label for="YardNo" class="radio"><span>No</span></label>
+            </div>
+          </div>
+          <div class="question">
+            <p>Balcony</p>
+            <div class="question-answer">
+              <input type="radio" value="Yes" id="BalconyYes" name="Balcony" />
+              <label for="BalconyYes" class="radio"><span>Yes</span></label>
+              <input type="radio" value="No" id="BalconyNo" name="Balcony" />
+              <label for="BalconyNo" class="radio"><span>No</span></label>
+            </div>
+          </div>
+        </div>
+        <div id="testbox">
+          <h2 id="prediction-header">Prediction:</h2>
+          <p id="prediction-value">Loading...</p>
+        </div>
+
+        <div class="btn-block">
+          <button type="submit" href="/">Submit</button>
+        </div>
+      </form>
     </div>
-    <div class="slide">
-      <img src="img/piso2.jpg">
-      <p>Texto descriptivo de la segunda imagen</p>
-    </div>
-    <!-- Más slides aquí -->
-  </div>
-  
-  <!-- Formulario dinámico -->
-  <form id="formulario">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre">
-    <!-- Más campos de formulario aquí -->
-  </form>
-  
-  <script>
-    // Slider de imágenes
-    var slider = document.getElementById("slider");
-    var slides = slider.getElementsByClassName("slide");
-    var currentSlide = 0;
-    setInterval(showNextSlide, 3000); // Muestra el siguiente slide cada 3 segundos
-  
-    function showNextSlide() {
-      // Oculta el slide actual
-      slides[currentSlide].style.display = "none";
-  
-      // Incrementa el slide actual
-      currentSlide = (currentSlide + 1) % slides.length;
-  
-      // Muestra el slide siguiente
-      slides[currentSlide].style.display = "block";
-    }
-  
-    // Formulario dinámico
-    var formulario = document.getElementById("formulario");
-    formulario.addEventListener("input", actualizaFormulario);
-  
-    function actualizaFormulario() {
-      // Recupera el valor del campo "nombre"
-      var nombre = formulario.elements.nombre.value;
-  
-      // Muestra un mensaje de bienvenida si el campo "nombre" no está vacío
-      if (nombre.trim() != "") {
-        console.log("Bienvenido, " + nombre + "!");
+
+    <script>
+      function sendPostRequest() {
+        const formData = new FormData(document.getElementById("formulario"));
+
+        var input = document.getElementById("Sqft_m2").value;
+        var floatValue = parseFloat(input.replace(",", "."));
+
+        // Convierte los datos del formulario a un objeto JSON
+        const data = {};
+        formData.forEach((value, key) => {
+          // Si el campo es una casilla de verificación y no está seleccionada, enviar "No"
+
+          // Si el campo es Rooms o Toilets, convertir a entero
+          // Si el campo es Sqft_m2 o RatioEurM, convertir a float
+          if (key === "Rooms" || key === "Toilets") {
+            data[key] = parseInt(value);
+          } else if (key === "Sqft_m2" || key === "RatioEurM") {
+            data[key] = parseFloat(value);
+          } else {
+            data[key] = value;
+          }
+        });
+
+        // Convierte los datos del formulario a un objeto JSON
+
+        // Envía la solicitud HTTP POST a tu aplicación Flask
+        fetch("http://127.0.0.1:5000/predict", {
+          method: "POST",
+          //mode: 'no-cors',
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json()) // Procesa la respuesta del servidor como JSON
+          .then((data) => {
+            // Aquí puedes procesar los datos devueltos por el servidor
+            console.log(data);
+            document.getElementById("prediction-value").innerHTML = data.Price;
+          })
+          .catch((error) => {
+            // Aquí puedes manejar cualquier error que ocurra durante la solicitud
+            console.error(error);
+          });
       }
-    }
-  </script>
-  
+    </script>
+  </body>
+</html>
