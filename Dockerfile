@@ -7,11 +7,12 @@ RUN pip install fastai --upgrade
 
 ENV PYTHONPATH $PYTHONPATH:/usr/local/lib/python3.8/site-packages/fastai
 
+WORKDIR /app
 
 # Copia el código de la API y el modelo al contenedor
 COPY app.py .
 COPY model.pkl .
 
 # Establece el puerto y el comando para ejecutar la API
-EXPOSE 5000
+EXPOSE 8080
 CMD ["python", "/app/app.py"]

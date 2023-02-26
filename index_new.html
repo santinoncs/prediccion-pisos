@@ -26,27 +26,55 @@
             <div class="name-item">
               <input
                 type="text"
-                name="Sqft_m2"
-                id="Sqft_m2"
+                name="m2"
+                id="m2"
               />
             </div>
           </div>
           <div class="item">
             <p>Habitaciones</p>
             <div class="name-item">
-              <input type="text" id="Rooms" name="Rooms" />
+              <input type="text" id="rooms" name="rooms" />
+            </div>
+          </div>
+          <div class="item">
+            <p>Location</p>
+            <div class="name-item">
+              <select name="location">
+                <option value="Verdun">Verdun</option>
+                <option value="Dreta de l´Eixample">Dreta de l´Eixample</option>
+                <option value="Baix Guinardó">Baix Guinardó</option>
+                <option value="Sant Gervasi - Galvany">Sant Gervasi - Galvany</option>
+                <option value="Font d´en Fargas">Font d´en Fargas</option>
+                <option value="Taxonera">Taxonera</option>
+                <option value="La Sagrera">La Sagrera</option>
+                <option value="Guinardó">Guinardó</option>
+                <option value="La Salut">La Salut</option>
+                <option value="Putget - Farró">Putget - Farró</option>
+                <option value="Vila de Gràcia">Vila de Gràcia</option>
+                <option value="Esquerra Baixa de l´Eixample">Esquerra Baixa de l´Eixample</option>
+                <option value="Roquetes">Roquetes</option>
+                <option value="St. Pere - Sta. Caterina - El Born">St. Pere - Sta. Caterina - El Born</option>
+                <option value="Carmel">Carmel</option>
+                <option value="Sagrada Família">Sagrada Família</option>
+                <option value="Esquerra Alta de l´Eixample">Esquerra Alta de l´Eixample</option>
+                <option value="Tres Torres">Tres Torres</option>
+                <option value="Sarrià">Sarrià</option>
+                <option value="Gòtic">Gòtic</option>
+                <option value="Vallcarca - Penitents">Vallcarca - Penitents</option>
+              </select>
             </div>
           </div>
           <div class="item">
             <p>Lavabos</p>
             <div class="name-item">
-              <input type="text" id="Toilets" name="Toilets" />
+              <input type="text" id="banos" name="banos" />
             </div>
           </div>
           <div class="item">
             <p>Ratio Euros / Metros Cuadrados</p>
             <div class="name-item">
-              <input type="text" name="RatioEurM" />
+              <input type="text" name="eurom2" />
             </div>
           </div>
         </div>
@@ -56,40 +84,50 @@
             <div class="question-answer">
               <input
                 type="radio"
-                value="Yes"
+                value="Si"
                 id="ElevatorYes"
-                name="Elevator"
+                name="ascensor"
               />
-              <label for="ElevatorYes" class="radio"><span>Yes</span></label>
-              <input type="radio" value="No" id="ElevatorNo" name="Elevator" />
+              <label for="ElevatorYes" class="radio"><span>Si</span></label>
+              <input type="radio" value="No" id="ElevatorNo" name="ascensor" />
               <label for="ElevatorNo" class="radio"><span>No</span></label>
             </div>
           </div>
           <div class="question">
             <p>Parking</p>
             <div class="question-answer">
-              <input type="radio" value="Yes" id="ParkingYes" name="Parking" />
-              <label for="ParkingYes" class="radio"><span>Yes</span></label>
-              <input type="radio" value="none" id="ParkingNo" name="Parking" />
+              <input type="radio" value="Si" id="ParkingYes" name="parking" />
+              <label for="ParkingYes" class="radio"><span>Si</span></label>
+              <input type="radio" value="No" id="ParkingNo" name="parking" />
               <label for="ParkingNo" class="radio"><span>No</span></label>
             </div>
           </div>
           <div class="question">
             <p>Aire Acondicionado</p>
             <div class="question-answer">
-              <input type="radio" value="Yes" id="CoolAirYes" name="CoolAir" />
-              <label for="CoolAirYes" class="radio"><span>Yes</span></label>
-              <input type="radio" value="No" id="CoolAirNo" name="CoolAir" />
+              <input type="radio" value="Si" id="CoolAirYes" name="acondicionado" />
+              <label for="CoolAirYes" class="radio"><span>Si</span></label>
+              <input type="radio" value="No" id="CoolAirNo" name="acondicionado" />
               <label for="CoolAirNo" class="radio"><span>No</span></label>
+            </div>
+          </div>
+
+          <div class="question">
+            <p>Transporte</p>
+            <div class="question-answer">
+              <input type="radio" value="Si" id="TransporteYes" name="transporte" />
+              <label for="TransporteYes" class="radio"><span>Si</span></label>
+              <input type="radio" value="No" id="TransporteNo" name="transporte" />
+              <label for="TransporteNo" class="radio"><span>No</span></label>
             </div>
           </div>
 
           <div class="question">
             <p>Calefacción</p>
             <div class="question-answer">
-              <input type="radio" value="Yes" id="HeatingYes" name="Heating" />
-              <label for="HeatingYes" class="radio"><span>Yes</span></label>
-              <input type="radio" value="No" id="HeatingNo" name="Heating" />
+              <input type="radio" value="Si" id="HeatingYes" name="calefaccion" />
+              <label for="HeatingYes" class="radio"><span>Si</span></label>
+              <input type="radio" value="No" id="HeatingNo" name="calefaccion" />
               <label for="HeatingNo" class="radio"><span>No</span></label>
             </div>
           </div>
@@ -100,18 +138,18 @@
             <div class="question-answer">
               <input
                 type="radio"
-                value="New"
+                value="Si"
                 id="ConstructionYes"
-                name="Construction"
+                name="obarNueva"
               />
               <label for="ConstructionYes" class="radio"
-                ><span>Yes</span></label
+                ><span>Si</span></label
               >
               <input
                 type="radio"
-                value="Not New"
+                value="No"
                 id="ConstructionNo"
-                name="Construction"
+                name="obarNueva"
               />
               <label for="ConstructionNo" class="radio"><span>No</span></label>
             </div>
@@ -119,27 +157,27 @@
           <div class="question">
             <p>Piscina</p>
             <div class="question-answer">
-              <input type="radio" value="Yes" id="PoolYes" name="Pool" />
-              <label for="PoolYes" class="radio"><span>Yes</span></label>
-              <input type="radio" value="No" id="PoolNo" name="Pool" />
+              <input type="radio" value="Si" id="PoolYes" name="piscina" />
+              <label for="PoolYes" class="radio"><span>Si</span></label>
+              <input type="radio" value="No" id="PoolNo" name="piscina" />
               <label for="PoolNo" class="radio"><span>No</span></label>
             </div>
           </div>
           <div class="question">
             <p>Jardin</p>
             <div class="question-answer">
-              <input type="radio" value="Yes" id="YardYes" name="Yard" />
-              <label for="YardYes" class="radio"><span>Yes</span></label>
-              <input type="radio" value="No" id="YardNo" name="Yard" />
+              <input type="radio" value="Si" id="YardYes" name="jardin" />
+              <label for="YardYes" class="radio"><span>Si</span></label>
+              <input type="radio" value="No" id="YardNo" name="jardin" />
               <label for="YardNo" class="radio"><span>No</span></label>
             </div>
           </div>
           <div class="question">
             <p>Balcony</p>
             <div class="question-answer">
-              <input type="radio" value="Yes" id="BalconyYes" name="Balcony" />
-              <label for="BalconyYes" class="radio"><span>Yes</span></label>
-              <input type="radio" value="No" id="BalconyNo" name="Balcony" />
+              <input type="radio" value="Si" id="BalconyYes" name="terraza" />
+              <label for="BalconyYes" class="radio"><span>Si</span></label>
+              <input type="radio" value="No" id="BalconyNo" name="terraza" />
               <label for="BalconyNo" class="radio"><span>No</span></label>
             </div>
           </div>
@@ -159,7 +197,7 @@
       function sendPostRequest() {
         const formData = new FormData(document.getElementById("formulario"));
 
-        var input = document.getElementById("Sqft_m2").value;
+        var input = document.getElementById("m2").value;
         var floatValue = parseFloat(input.replace(",", "."));
 
         // Convierte los datos del formulario a un objeto JSON
@@ -167,11 +205,11 @@
         formData.forEach((value, key) => {
           // Si el campo es una casilla de verificación y no está seleccionada, enviar "No"
 
-          // Si el campo es Rooms o Toilets, convertir a entero
-          // Si el campo es Sqft_m2 o RatioEurM, convertir a float
-          if (key === "Rooms" || key === "Toilets") {
+          // Si el campo es rooms o banos, convertir a entero
+          // Si el campo es m2 o eurom2, convertir a float
+          if (key === "rooms" || key === "banos") {
             data[key] = parseInt(value);
-          } else if (key === "Sqft_m2" || key === "RatioEurM") {
+          } else if (key === "m2" || key === "eurom2") {
             data[key] = parseFloat(value);
           } else {
             data[key] = value;
@@ -181,7 +219,7 @@
         // Convierte los datos del formulario a un objeto JSON
 
         // Envía la solicitud HTTP POST a tu aplicación Flask
-        fetch("http://127.0.0.1:5000/predict", {
+        fetch("https://prediccionpisosia.ew.r.appspot.com/predict", {
           method: "POST",
           //mode: 'no-cors',
           headers: {
@@ -194,7 +232,7 @@
           .then((data) => {
             // Aquí puedes procesar los datos devueltos por el servidor
             console.log(data);
-            document.getElementById("prediction-value").innerHTML = data.Price;
+            document.getElementById("prediction-value").innerHTML = data.price;
           })
           .catch((error) => {
             // Aquí puedes manejar cualquier error que ocurra durante la solicitud
