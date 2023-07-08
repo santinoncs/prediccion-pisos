@@ -227,7 +227,7 @@
           .then((data) => {
             // Aquí puedes procesar los datos devueltos por el servidor
             console.log(data);
-            document.getElementById("prediction").innerHTML = data.prediction;
+            document.getElementById("prediction-value").innerHTML = data.prediction[0];
           })
           .catch((error) => {
             // Aquí puedes manejar cualquier error que ocurra durante la solicitud
